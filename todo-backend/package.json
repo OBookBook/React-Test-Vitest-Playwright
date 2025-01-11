@@ -1,7 +1,8 @@
 {
   "scripts": {
     "dev": "wrangler dev src/index.ts",
-    "deploy": "wrangler deploy --minify src/index.ts"
+    "deploy": "wrangler deploy --minify src/index.ts",
+    "apply": "wrangler d1 migrations apply todo-with-hono --local"
   },
   "dependencies": {
     "hono": "^4.3.10"
