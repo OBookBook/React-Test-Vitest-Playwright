@@ -18,4 +18,10 @@ describe("TodoAppのテストケース", () => {
     expect(screen.getByText(/Loading/i)).toBeInTheDocument(); // 期待する動作：正規表現を使用して、`Loading`を含む
     expect(screen.getByText("Loading...")).toBeInTheDocument(); // 期待する動作：画面上に「Loading...」という完全一致のテキストが表示されていることを確認
   });
+
+  test("TOdoアプリが表示されていること", async () => {
+    renderWithClient(<TodoApp />);
+
+    expect(await screen.getByText(/Todo APP/i)).toBeInTheDocument();
+  });
 });
